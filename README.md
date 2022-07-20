@@ -200,9 +200,11 @@ arr.forEach(function(item, i, arr){
 
 `git push origin <branch>` - загрузка на Хаб
 
+`git push --set-upstream origin <branch>` - загрузка на Хаб в новую ветку
+
 ---
 
-` git push origin <branch>` - принудительная загрузка на Хаб(!опасно)
+` git push -f origin <branch>` - принудительная загрузка на Хаб(!опасно)
 
 `^` - на версию выше
 
