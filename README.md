@@ -80,6 +80,32 @@ arr.forEach(function(item, i, arr){
 
 `for ( let value of arr){}` - перебор (позволяет break & contine)
 
+## События
+
+`OnClick = " function('')"` -> добавляется в Html, не рекомендуется использовать
+
+`node.onclick = function(){}` -> тоже не используется уже почти ()
+
+`node.addEventListener('click', (event) => {})` -> используем (event - про событие, всегда используется первым)
+
+`node.removeEventListener('clic', f(*))` -> \*точно такая же, что и была установлена
+
+`event.preventDefault()` -> отмена стандартного события браузера
+
+### Мобильные события
+
+`touchstart` -> палец косается элемента
+
+`touchmove` -> движение пальца по элементу
+
+`touchend` -> палец оторвался от элемента
+
+`touchenter` -> палец входит в область с элементом
+
+`touchleave` -> палец покидает область
+
+`touchcancel` -> палец вышел за пределы браузера
+
 ## Взаимодействие с html и css
 
 ### Поиск элемента
@@ -147,19 +173,13 @@ arr.forEach(function(item, i, arr){
 
 > `wrapper.smthChild()` -> старые версии всякого
 
-<!-- ## Событие
-
-`document.body.addEventListener("событие", function);`
-
-`e.preventDefault();` -> прерывание события
-
---- -->
-
 ## Всякие команды
 
 `console.dir(smth)` - получение всей инфы
 
 `isNan(a)` -> проверка на число, возвр не/правду
+
+`checkbox.checked` -> возвращает булевое поставлена ли галочка
 
 `.lenght` -> длина массива и тд
 
