@@ -106,6 +106,18 @@ arr.forEach(function(item, i, arr){
 
 `touchcancel` -> палец вышел за пределы браузера
 
+### Делегирование событий
+
+Событие навешивается на родительский элемент, потом через if делегируется
+
+```
+ wrapper.addEventListener('click', (event) => {
+	if (event.target && event.target.classList.contains('blue')){
+		// do something
+	}
+ });
+```
+
 ## Взаимодействие с html и css
 
 ### Поиск элемента
@@ -126,7 +138,15 @@ arr.forEach(function(item, i, arr){
 
 ### Взаимодействие со стилями
 
-`node.classList.add('class')` -> добавление класса
+`node.classList.item(i)` -> сласс по определенным индексом
+
+`node.classList.toggle('class')` -> переключает класс
+
+`node.classList.contains('class')` -> возвращает булиан насчет имеется ли класс
+
+`node.classList.add('class', 'class')` -> добавление класса
+
+`node.classList.remove('class')` -> удаляет класса
 
 `node.style.smth = '500'` -> добавление css стилей
 
@@ -172,6 +192,12 @@ arr.forEach(function(item, i, arr){
 - `.replaceWith(x)` -> заменяет элемент
 
 > `wrapper.smthChild()` -> старые версии всякого
+
+## Подгрузка скриптов
+
+`<script defer src="js/script.js"></script>` -> скрипт подгружается в фоновом режиме, запускает ток, когда скрипт загрузит и когда ДОМ дерево загружено
+
+`<script async src="js/script.js"></script>` -> загружаются в фоноом режиме, но выполняется сразу, как загрузится. Используется для счетчиков посещений, т.е. скрипт не взаимодействует с другими скриптами и ДОМ деревом
 
 ## Всякие команды
 
