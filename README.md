@@ -18,8 +18,6 @@
 
 `??`: возвращает если определено ?? неопределено
 
-**\`text ${i}`** -> интерполяция
-
 `if(_true_)`
 
 _Ctrl + L_ -> отчистка терминала
@@ -56,7 +54,7 @@ _Ctrl + L_ -> отчистка терминала
 
 `...arr` -> разложить массив и обьект
 
-### Наследование
+## Наследование
 
 `obj.__proto__ = protoObj;` -> неиспользуется
 
@@ -64,7 +62,7 @@ _Ctrl + L_ -> отчистка терминала
 
 `let obj = Object.create(protoObj);` -> создание обьекта ребенка
 
-### Массив
+## Массив
 
 > **Псевдомассив** - это объект, который похож на массив. У него есть числовые свойства, как у массивов. А также свойство `.length`. У них нет свойств, и методов массивов, таких как forEach, join, slice и др.
 
@@ -90,23 +88,32 @@ arr.forEach(function(item, i, arr){
 
 `node.removeEventListener('clic', f(*))` -> \*точно такая же, что и была установлена
 
+`node.addEventListener('click', f, {once: true})` -> событие происходит один раз
+
 `event.preventDefault()` -> отмена стандартного события браузера
+
+    Событие клавиатуры
+
+    document.addEventListener("keydown", (e) => {
+    	if (e.code === "Escape") {
+    	}
+    });
 
 ### Мобильные события
 
-`touchstart` -> палец косается элемента
+- `touchstart` -> палец косается элемента
 
-`touchmove` -> движение пальца по элементу
+- `touchmove` -> движение пальца по элементу
 
-`touchend` -> палец оторвался от элемента
+- `touchend` -> палец оторвался от элемента
 
-`touchenter` -> палец входит в область с элементом
+- `touchenter` -> палец входит в область с элементом
 
-`touchleave` -> палец покидает область
+- `touchleave` -> палец покидает область
 
-`touchcancel` -> палец вышел за пределы браузера
+- `touchcancel` -> палец вышел за пределы браузера
 
-### Делегирование событий
+## Делегирование событий
 
 Событие навешивается на родительский элемент, потом через if делегируется
 
@@ -120,7 +127,7 @@ arr.forEach(function(item, i, arr){
 
 ## Поиск элемента
 
-`node.qwerySelector('.css selector')` -> один самый первый подходящий элемент
+`node.qwerySelector('.css selector'/ '[data-smt]')` -> один самый первый подходящий элемент
 
 `document.qwerySelectorAll('#css selector') ` -> продвинутый псевдоМассив элементов
 
@@ -146,11 +153,29 @@ arr.forEach(function(item, i, arr){
 
 `node.classList.remove('class')` -> удаляет класса
 
-## style
+## Стили
 
 `node.style.smth = '500'` -> добавление css стилей
 
 `node.style.cssText = 'color: blue; width: ${i}px'` -> добавление нескольких css стилей
+
+`window.getComputedStyle(node)` -> получить обьект стилей **обьекта**
+
+`node.clientWidth` -> получение метрик
+
+![](./img/042%20metric-all.png)
+
+`node.getBoundingClientRect().top` -> получаем координаты элемента (координаты зеркальны с css)
+
+`document.documentElement.clientWidth` -> получение метрик для документа
+
+`document.documentElement.clientWidth = 0` -> изменение метрики
+
+`window.scrollBy(x,y)` -> переместить пользователя относительно
+
+`window.scrollTo(x,y)` -> переместить пользователя абсолютно
+
+`window.pageYOffset` -> прокрученость элемента по вертикали
 
 ## Взаимодействие с Html
 
@@ -182,7 +207,7 @@ arr.forEach(function(item, i, arr){
 
 `Date.parse('2022-11-31')` -> перевод строки в дату(миллисекунды)
 
-### Добавление элемента
+## Добавление элемента
 
 `node.insertAdjacentHTML("arg", "html")` -> вставляет html.
 Аргументы:
@@ -196,6 +221,7 @@ arr.forEach(function(item, i, arr){
 - `afterend` -> после конца элемента
 
 **`node[]`:**
+m
 
 - `.append(div)` -> добавляет элемент в конец элемента
 
