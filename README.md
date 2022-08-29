@@ -74,7 +74,7 @@ _Ctrl + L_ -> отчистка терминала
 
 ```
 arr.forEach(function(item, i, arr){
-		(`${item) элемент - ${i) номаер эл. - ${arr) весь масив`);
+		(`${item) элемент - ${i) номер эл. - ${arr) весь масив`);
 });
 ```
 
@@ -118,9 +118,7 @@ arr.forEach(function(item, i, arr){
  });
 ```
 
-## Взаимодействие с html и css
-
-### Поиск элемента
+## Поиск элемента
 
 `node.qwerySelector('.css selector')` -> один самый первый подходящий элемент
 
@@ -136,7 +134,7 @@ arr.forEach(function(item, i, arr){
 
 > элемент == нод
 
-### Взаимодействие со стилями
+## classList
 
 `node.classList.item(i)` -> сласс по определенным индексом
 
@@ -148,11 +146,13 @@ arr.forEach(function(item, i, arr){
 
 `node.classList.remove('class')` -> удаляет класса
 
+## style
+
 `node.style.smth = '500'` -> добавление css стилей
 
 `node.style.cssText = 'color: blue; width: ${i}px'` -> добавление нескольких css стилей
 
-### Взаимодействие с Html
+## Взаимодействие с Html
 
 `document.createElement('div')` -> создание элемента !но только внутри js
 
@@ -163,6 +163,24 @@ arr.forEach(function(item, i, arr){
 `node.innerHTML = "<h1>Oi</h1>"` -> вставляет содержимое в элемент
 
 `node.textContent = "onli text"` -> вставляет только текст в целях безопастности
+
+## Штуки для ВРЕМЕНИ
+
+`SetInterval(function, 1000, argument)` -> интервал в миллисикундах, функция без скобок
+
+`SetTimeout(function, 1000, argument)` -> задержка в миллисекундах, функция без скобок
+
+> const timer = setTimeout(function, 2000);
+
+`clearInterval(timer)` -> убрать задержку и интервал
+
+## Date
+
+`const now = new Date()` -> получение даты сейчас
+
+> 2022-11-31T15:59:59.444Z
+
+`Date.parse('2022-11-31')` -> перевод строки в дату(миллисекунды)
 
 ### Добавление элемента
 
@@ -208,8 +226,6 @@ arr.forEach(function(item, i, arr){
 `checkbox.checked` -> возвращает булевое поставлена ли галочка
 
 `.lenght` -> длина массива и тд
-
-`.toggle('')` -> переключение
 
 `getAttribute('')` -> получение data-x
 
