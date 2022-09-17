@@ -104,7 +104,7 @@ window.addEventListener("DOMContentLoaded", () => {
   function openModal() {
     modal.classList.toggle("show");
     document.body.style.overflow = "hidden";
-    clearInterval(modalTimerId);
+    // clearInterval(modalTimerId);
   }
 
   modalCloseBtn.addEventListener("click", closeModal);
@@ -121,7 +121,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const modalTimerId = setTimeout(openModal, 3000);
+  // const modalTimerId = setTimeout(openModal, 3000);
 
   function showModalByScroll() {
     if (
@@ -133,5 +133,46 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.addEventListener("scroll", showModalByScroll);
+  // window.addEventListener("scroll", showModalByScroll);
+
+  // ! Classes 
+
+  class MenuBox {
+    constructor(title, descr, cost, img ){
+      this.title = title;
+      this.descr = descr;
+      this.cost = cost;
+      this.img = img;
+    }
+  }
+  
+  const a1 = new MenuBox('Меню "Фитнес"',`Меню "Фитнес" - это новый подход к приготовлению блюд: больше
+  свежих овощей и фруктов. Продукт активных и здоровых людей. Это
+  абсолютно новый продукт с оптимальной ценой и высоким качеством!`,229, 'img/tabs/vegy.jpg'),
+  a2 = new MenuBox('Меню “Премиум”',`В меню “Премиум” мы используем не только красивый дизайн упаковки,
+  но и качественное исполнение блюд. Красная рыба, морепродукты,
+  фрукты - ресторанное меню без похода в ресторан!`,550, 'img/tabs/elite.jpg'),
+  a3 = new MenuBox('Меню "Постное"',`Меню “Постное” - это тщательный подбор ингредиентов: полное
+  отсутствие продуктов животного происхождения, молоко из миндаля,
+  овса, кокоса или гречки, правильное количество белков за счет тофу
+  и импортных вегетарианских стейков.`,430, 'img/tabs/post.jpg');
+
+  const arr = [a1, a2, a3],
+        wrapper = document.querySelector('.menu__field .container');
+
+  arr.forEach( item => {
+    wrapper.innerHTML += `
+    <div class="menu__item">
+    <img src="${item.img}" alt="vegy" />
+    <h3 class="menu__item-subtitle">${item.title}</h3>
+    <div class="menu__item-descr">
+    ${item.descr}
+    </div>
+    <div class="menu__item-divider"></div>
+    <div class="menu__item-price">
+      <div class="menu__item-cost">Цена:</div>
+      <div class="menu__item-total"><span>${item.cost}</span> грн/день</div>
+    </div>
+    </div>`;
+   });
 });

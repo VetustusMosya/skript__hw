@@ -18,9 +18,13 @@
 
 `??`: возвращает если определено ?? неопределено
 
-`if(_true_)`
+`forEach(item => {item.innerHTML += ""})` -> `+=` !
 
-_Ctrl + L_ -> отчистка терминала
+```
+arr.forEach(function(item, i, arr){
+		(`${item) элемент - ${i) номер эл. - ${arr) весь масив`);
+});
+```
 
 ---
 
@@ -40,6 +44,18 @@ _Ctrl + L_ -> отчистка терминала
 - "create…" – что-то создают,
 - "check…" – что-то проверяют и возвращают логическое значение, и т.д
 
+## this 
+
+1. Обычная функция: this = window, но если use strict - undefined
+2. Контекст у методов обьекта, и есть этот обьект
+3. this в конструкторах и классах - это новый экземпляр обьекта
+4. Ручная привязка this:
+   * `function.call(obj, 'argument')`-> ручное назначение контекста
+   * `function.apply(obj, [argument])`-> ручное назначение контекста
+   * `const contecstFunction = function.bind(arg)` -> назначение
+5. this = event.target
+6. у стрелочной функции контекст берется у родителя
+
 ## Обьекты
 
 ![](./img/021%20Objects.jpg)
@@ -54,7 +70,48 @@ _Ctrl + L_ -> отчистка терминала
 
 `...arr` -> разложить массив и обьект
 
+### Функции конструкторы
+
+    function Constructor(id){
+    		this.id = id;
+    		this.a = true;
+    		this.metod = function(){
+    		}
+    	}
+
+`const obj = new Constructor(1)` -> Создание обьекта на основе конструкта
+
+`obj.metod()` -> вызов метода
+
+`Constructor.prototype.newMetod = f()` -> добавление метода
+
+## Классы
+
+```
+class BigLetter{
+	constructor(arg1, arg2){
+		this.arg1 = arg1;
+		this.arg2 = arg2;
+	}
+
+	metod(){
+		return this.arg1;
+	}
+}
+
+const class = new BigLetter(arg1, arg2);
+```
+
 ## Наследование
+
+```
+class Child extends Parent{
+ constructor(parentArg1,  arg3){
+		super(parentArg1); //
+		this.arg3 = arg3;
+ }
+}
+```
 
 `obj.__proto__ = protoObj;` -> неиспользуется
 
