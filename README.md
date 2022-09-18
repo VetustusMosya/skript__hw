@@ -2,7 +2,7 @@
 
 ## Навигация 
 
-1. [Циклы](#сycles) 
+1. [Циклы и условия](#terms-сycles) 
 1. [Функции](#function)
 1. [this](#this)
 1. [Обьекты](#object) 
@@ -13,6 +13,8 @@
 1. [Делегирование](#delegation) 
 1. [Поиск](#search-element) 
 1. [Стили](#css) 
+1. [JSON](#json)
+1. [Серверное взаимодействие](#server-interaction)
 1. [Метрики](#metrics) 
 1. [HTML](#html) 
 1. [Метиматика](#math) 
@@ -39,9 +41,11 @@
 
 `forEach(item => {item.innerHTML += ""})` -> `+=` !
 
-```
+`e.preventDefault` -> отмена стандартного поведения браузера
+
+```js
 arr.forEach(function(item, i, arr){
-		(`${item) элемент - ${i) номер эл. - ${arr) весь масив`);
+		(`${item} элемент - ${i} номер эл. - ${arr} весь масив`);
 });
 ```
 **Spread oparator:**
@@ -52,7 +56,7 @@ arr.forEach(function(item, i, arr){
 
 ---
 <!-- ! -->
-# Сycles 
+# Terms Сycles 
 
 ![](./img/014%20.jpg)
 
@@ -103,12 +107,14 @@ arr.forEach(function(item, i, arr){
 
 ## Функции конструкторы
 
-    function Constructor(id){
-    		this.id = id;
-    		this.a = true;
-    		this.metod = function(){
-    		}
-    	}
+```js
+function Constructor(id){
+	this.id = id;
+	this.a = true;
+	this.metod = function(){
+	}
+}
+```
 
 `const obj = new Constructor(1)` -> Создание обьекта на основе конструкта
 
@@ -119,7 +125,7 @@ arr.forEach(function(item, i, arr){
 <!-- ! -->
 # Classes
 
-```
+```js
 class BigLetter{
 	constructor(arg1, arg2){
 		this.arg1 = arg1;
@@ -135,9 +141,9 @@ const class = new BigLetter(arg1, arg2);
 ```
 
 <!-- ! -->
-# Extends
+## Extends
 
-```
+```js
 class Child extends Parent{
  constructor(parentArg1,  arg3){
 		super(parentArg1); //
@@ -163,7 +169,7 @@ class Child extends Parent{
 
 `const newArr = arr.slice()` -> копируем массив
 
-```
+```js
 arr.forEach(function(item, i, arr){
 		(`${item) элемент - ${i) номер эл. - ${arr) весь масив`);
 });
@@ -174,7 +180,7 @@ arr.forEach(function(item, i, arr){
 <!-- ! -->
 # Event
 
-`OnClick = " function('')"` -> добавляется в Html, не рекомендуется использовать
+`OnClick = "function('')"` -> добавляется в Html, не рекомендуется использовать
 
 `node.onclick = function(){}` -> тоже не используется уже почти ()
 
@@ -186,12 +192,20 @@ arr.forEach(function(item, i, arr){
 
 `event.preventDefault()` -> отмена стандартного события браузера
 
-    Событие клавиатуры
+## Событие клавиатуры
 
-    document.addEventListener("keydown", (e) => {
-    	if (e.code === "Escape") {
-    	}
-    });
+```js
+document.addEventListener("keydown", (e) => {
+	if (e.code === "Escape") {
+	}
+});
+```
+
+## События формы
+
+- `change` -> происходит при смене фокуса с элемента
+
+- `input` -> происходит, когда что-то вводится
 
 ## Мобильные события
 
@@ -212,7 +226,7 @@ arr.forEach(function(item, i, arr){
 
 Событие навешивается на родительский элемент, потом через if делегируется
 
-```
+```js
  wrapper.addEventListener('click', (event) => {
 	if (event.target && event.target.classList.contains('blue')){
 		// do something
@@ -253,6 +267,63 @@ arr.forEach(function(item, i, arr){
 `node.classList.add('class', 'class')` -> добавление класса
 
 `node.classList.remove('class')` -> удаляет класса
+
+<!-- ! -->
+# JSON
+
+`JSON.stringify(obj)` -> кодирование в JSON
+
+`JSON.parde(obj)` -> раскодирование в обьект
+
+```JSON
+{
+	"atribute": "string",
+	"obj":{
+		"something": 56,
+	}
+}
+```
+
+<!-- ! -->
+# Server interaction
+
+> `name = "atribute"` -> в форме  
+
+```js
+ const request = new XMLHttpRequest();
+
+ request.open('method', url, assync, login, pass); // method: POST, GET
+ request.setRequestHeader('Content-type', 'application/json; charset=гае-8'); //заголовок, для php не нужен
+
+const formData = new FormData(form); //php
+request.send(formData);
+
+const object = {}; //JSON
+formData.forEach(function (value, key) {
+	object[key] = value;
+});
+ request.send(JSON.stringify(object));
+
+ request.addEventListener('load',()=>{
+		if(request.status === 200){
+			request.response
+		}
+ });
+ 
+```
+Свойства:
+
+- `status` -> 200 - OK; 404 - not fund
+
+- `response` -> ответ
+
+- `readyState` -> 0: unsent; 1: opened; 2: header_recived; 3: loading; 4: done; 
+
+События:
+
+- `readystatechange` -> изменение readyState
+
+- `load` -> завершена загрузка
 
 <!-- ! -->
 # Metrics
@@ -300,9 +371,7 @@ arr.forEach(function(item, i, arr){
 
 `node.textContent = "onli text"` -> вставляет только текст в целях безопастности
 
-`node.insertAdjacentHTML("arg", "html")` -> вставляет html.
-
-Аргументы:
+**`node.insertAdjacentHTML("arg", "html")` -> вставляет html.**:
 
 - `beforebegin` -> перед элементом
 
@@ -381,9 +450,10 @@ arr.forEach(function(item, i, arr){
 
 ---
 
-    							Идеи:
-
-    							- конвертер валют
+	Идеи:
+	- линия языков в резюме 
+	- фон малевичем в резюме
+	- конвертер валют
 
 ---
 
