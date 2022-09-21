@@ -1,26 +1,27 @@
 # 🗿 Типо конспекта и шпоры 🗿
 
-## Навигация 
+## Navigation
 
-1. [Циклы и условия](#terms-сycles) 
+1. [Циклы и условия](#terms-сycles)
 1. [Функции](#function)
 1. [this](#this)
-1. [Обьекты](#object) 
-1. [Классы](#classes) 
-1. [Наследование](#extends) 
-1. [Массивы](#array) 
-1. [События](#event) 
-1. [Делегирование](#delegation) 
-1. [Поиск](#search-element) 
-1. [Стили](#css) 
+1. [Обьекты](#object)
+1. [Классы](#classes)
+1. [Наследование](#extends)
+1. [Массивы](#array)
+1. [События](#event)
+1. [Делегирование](#delegation)
+1. [Поиск](#search-element)
+1. [Стили](#css)
 1. [JSON](#json)
 1. [Серверное взаимодействие](#server-interaction)
-1. [Метрики](#metrics) 
-1. [HTML](#html) 
-1. [Метиматика](#math) 
-1. [Задержки и дата](#time) 
-1. [Другое](#other) 
-1. [Загрузки скриптов](#skripts-load) 
+1. [Обещания](#promise)
+1. [Метрики](#metrics)
+1. [HTML](#html)
+1. [Метиматика](#math)
+1. [Задержки и дата](#time)
+1. [Другое](#other)
+1. [Загрузки скриптов](#skripts-load)
 <!--  1. []()  -->
 
 ## База
@@ -31,9 +32,9 @@
 
 `||` ИЛИ : `&&` И : `!` НE : `??` Оператор нулевого слияния
 
-#  Not sort 
+# Not sort
 
-`let result = условие ? значение1 : значение2;` 
+`let result = условие ? значение1 : значение2;`
 
 `let func = (arg1, arg2, ...argN) => expression;`
 
@@ -44,10 +45,11 @@
 `e.preventDefault` -> отмена стандартного поведения браузера
 
 ```js
-arr.forEach(function(item, i, arr){
-		(`${item} элемент - ${i} номер эл. - ${arr} весь масив`);
+arr.forEach(function (item, i, arr) {
+  `${item} элемент - ${i} номер эл. - ${arr} весь масив`;
 });
 ```
+
 **Spread oparator:**
 
 - `...arr` -> разложит массив на элементы(можно так коппировать массив)
@@ -55,12 +57,17 @@ arr.forEach(function(item, i, arr){
 - `function(a, b, ...arr){}` -> соберет следующие аргументы в массив
 
 ---
+
 <!-- ! -->
-# Terms Сycles 
+
+# Terms Сycles
 
 ![](./img/014%20.jpg)
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Function
 
 ![](./img/016%20functions.jpg)
@@ -73,20 +80,26 @@ arr.forEach(function(item, i, arr){
 - "create…" – что-то создают,
 - "check…" – что-то проверяют и возвращают логическое значение, и т.д
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
-# this 
+
+# this
 
 1. Обычная функция: this = window, но если use strict - undefined
 2. Контекст у методов обьекта, и есть этот обьект
 3. this в конструкторах и классах - это новый экземпляр обьекта
 4. Ручная привязка this:
-   * `function.call(obj, 'argument')`-> ручное назначение контекста
-   * `function.apply(obj, [argument])`-> ручное назначение контекста
-   * `const contecstFunction = function.bind(arg)` -> назначение
+   - `function.call(obj, 'argument')`-> ручное назначение контекста
+   - `function.apply(obj, [argument])`-> ручное назначение контекста
+   - `const contecstFunction = function.bind(arg)` -> назначение
 5. this = event.target
 6. у стрелочной функции контекст берется у родителя
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Object
 
 ![](./img/021%20Objects.jpg)
@@ -97,22 +110,21 @@ arr.forEach(function(item, i, arr){
 
 `Object.keys(obj)` -> в масив все свойства
 
-**Клонирование обьекта:** 
+**Клонирование обьекта:**
 
 - `Object.assign(obj, addObj)` -> создает обьект из двух обьектов, можно соединять с путым обьектом и таким образом копировать
 
 - `const cloneObj = JSON.parse(JSON.stringify(obj))` -> глубокое копирование обьекта
 
-`const copyObj = obj` -> *передача ссылки на обьект*
+`const copyObj = obj` -> _передача ссылки на обьект_
 
 ## Функции конструкторы
 
 ```js
-function Constructor(id){
-	this.id = id;
-	this.a = true;
-	this.metod = function(){
-	}
+function Constructor(id) {
+  this.id = id;
+  this.a = true;
+  this.metod = function () {};
 }
 ```
 
@@ -122,7 +134,10 @@ function Constructor(id){
 
 `Constructor.prototype.newMetod = f()` -> добавление метода
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Classes
 
 ```js
@@ -140,15 +155,18 @@ class BigLetter{
 const class = new BigLetter(arg1, arg2);
 ```
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 ## Extends
 
 ```js
-class Child extends Parent{
- constructor(parentArg1,  arg3){
-		super(parentArg1); //
-		this.arg3 = arg3;
- }
+class Child extends Parent {
+  constructor(parentArg1, arg3) {
+    super(parentArg1); //
+    this.arg3 = arg3;
+  }
 }
 ```
 
@@ -158,7 +176,10 @@ class Child extends Parent{
 
 `let obj = Object.create(protoObj);` -> создание обьекта ребенка
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Array
 
 > **Псевдомассив** - это объект, который похож на массив. У него есть числовые свойства, как у массивов. А также свойство `.length`. У них нет свойств, и методов массивов, таких как forEach, join, slice и др.
@@ -177,7 +198,10 @@ arr.forEach(function(item, i, arr){
 
 `for ( let value of arr){}` - перебор (позволяет break & contine)
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Event
 
 `OnClick = "function('')"` -> добавляется в Html, не рекомендуется использовать
@@ -196,8 +220,8 @@ arr.forEach(function(item, i, arr){
 
 ```js
 document.addEventListener("keydown", (e) => {
-	if (e.code === "Escape") {
-	}
+  if (e.code === "Escape") {
+  }
 });
 ```
 
@@ -221,20 +245,26 @@ document.addEventListener("keydown", (e) => {
 
 - `touchcancel` -> палец вышел за пределы браузера
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Delegation
 
 Событие навешивается на родительский элемент, потом через if делегируется
 
 ```js
- wrapper.addEventListener('click', (event) => {
-	if (event.target && event.target.classList.contains('blue')){
-		// do something
-	}
- });
+wrapper.addEventListener("click", (event) => {
+  if (event.target && event.target.classList.contains("blue")) {
+    // do something
+  }
+});
 ```
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Search element
 
 `node.qwerySelector('.css selector'/ '[data-smt]')` -> один самый первый подходящий элемент
@@ -247,7 +277,10 @@ document.addEventListener("keydown", (e) => {
 
 `document.getElementsByClassName('class')` -> ~~переведешь сам~~ и получает [**псевдомассив**](http://old.code.mu/javascript/pages/pseudo-array.html)
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # CSS
 
 `node.style.smth = '500'` -> добавление css стилей
@@ -268,7 +301,10 @@ document.addEventListener("keydown", (e) => {
 
 `node.classList.remove('class')` -> удаляет класса
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # JSON
 
 `JSON.stringify(obj)` -> кодирование в JSON
@@ -284,40 +320,65 @@ document.addEventListener("keydown", (e) => {
 }
 ```
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Server interaction
 
-> `name = "atribute"` -> в форме  
+> `name = "atribute"` -> в форме
 
 ```js
- const request = new XMLHttpRequest();
+fetch(url, {
+  method: "POST",
+  body: JSON.stringify(obj),
+  headers: {
+    "Content-type": "aplication/json",
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+```
 
- request.open('method', url, assync, login, pass); // method: POST, GET
- request.setRequestHeader('Content-type', 'application/json; charset=гае-8'); //заголовок, для php не нужен
+`fetch(url, [options])` -> запрос на сервер. Методы:
+
+- `.ok` -> получен ответ
+
+- `.text` -> обычный текст
+
+- `.json` -> декодирует JSON
+
+- `.formData` -> обьект FormData
+
+```js
+const request = new XMLHttpRequest();
+
+request.open("method", url, assync, login, pass); // method: POST, GET
+request.setRequestHeader("Content-type", "application/json; charset=гае-8"); //заголовок, для php не нужен
 
 const formData = new FormData(form); //php
 request.send(formData);
 
 const object = {}; //JSON
 formData.forEach(function (value, key) {
-	object[key] = value;
+  object[key] = value;
 });
- request.send(JSON.stringify(object));
+request.send(JSON.stringify(object));
 
- request.addEventListener('load',()=>{
-		if(request.status === 200){
-			request.response
-		}
- });
- 
+request.addEventListener("load", () => {
+  if (request.status === 200) {
+    request.response;
+  }
+});
 ```
+
 Свойства:
 
 - `status` -> 200 - OK; 404 - not fund
 
 - `response` -> ответ
 
-- `readyState` -> 0: unsent; 1: opened; 2: header_recived; 3: loading; 4: done; 
+- `readyState` -> 0: unsent; 1: opened; 2: header_recived; 3: loading; 4: done;
 
 События:
 
@@ -325,10 +386,42 @@ formData.forEach(function (value, key) {
 
 - `load` -> завершена загрузка
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
+# Promise
+
+`await function()` -> заставляет функцию ждать выполнения Promise и продолжать выполнение после возвращения Promise значения
+
+```js
+const a = new Promise((resolve, reject) => {
+  // ассинхронный код
+  resolve(b); // удачное выполнение
+  reject(); // ошибка
+});
+a.then((b) => {
+  return new Promise((resolve, reject) => {});
+})
+  .catch(() => {
+    // при ошибке
+  })
+  .finally(() => {
+    // при любом исходе
+  });
+```
+
+`Promise.all([promise1(), promise2()]).then(()=>{})` -> ждет окончания выполнения функций с обещаниями и только потом выполняется
+
+`Promise.race([promise1(), promise2()]).then(()=>{})` -> ждет выпонения самого первого обещания
+
+[ ↑ В меню](#navigation)
+
+<!-- ! -->
+
 # Metrics
 
-`node.clientWidth` -> получение метрик 
+`node.clientWidth` -> получение метрик
 
 ![](./img/042%20metric-all.png)
 
@@ -344,7 +437,10 @@ formData.forEach(function (value, key) {
 
 `window.pageYOffset` -> прокрученость элемента по вертикали
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # HTML
 
 `document.createElement('div')` -> создание элемента **но только внутри js**
@@ -383,8 +479,11 @@ formData.forEach(function (value, key) {
 
 > `wrapper.smthChild()` -> старые версии всякого
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
-# Math 
+
+# Math
 
 `parseInt('')` -> приведение к целому числу
 
@@ -392,17 +491,20 @@ formData.forEach(function (value, key) {
 
 ## Округление:
 
-  - `().toFixed(n)` -> n - знаки после запятой
+- `().toFixed(n)` -> n - знаки после запятой
 
-  - `x = Math.ceil( )` -> округление до наибольшего целого
+- `x = Math.ceil( )` -> округление до наибольшего целого
 
-  - `Math.floor( )` -> округление до наименьшего целого
+- `Math.floor( )` -> округление до наименьшего целого
 
-  - `Math.round( )`-> округление до ближайшего целого
+- `Math.round( )`-> округление до ближайшего целого
 
-  - `Math.trunc()`-> округление до целого в сторону нуля
+- `Math.trunc()`-> округление до целого в сторону нуля
+
+[ ↑ В меню](#navigation)
 
 <!-- ! -->
+
 # Time
 
 `SetInterval(function, 1000, argument)` -> интервал в миллисикундах, функция без скобок
@@ -421,7 +523,10 @@ formData.forEach(function (value, key) {
 
 `Date.parse('2022-11-31')` -> перевод строки в дату(миллисекунды)
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Other
 
 `console.dir(smth)` - получение всей инфы
@@ -441,7 +546,10 @@ formData.forEach(function (value, key) {
 
 `.toUpperCase` -> увеличить регистр
 
+[ ↑ В меню](#navigation)
+
 <!-- ! -->
+
 # Skripts load
 
 `<script defer src="js/script.js"></script>` -> скрипт подгружается в фоновом режиме, запускает ток, когда скрипт загрузит и когда ДОМ дерево загружено
@@ -450,18 +558,20 @@ formData.forEach(function (value, key) {
 
 ---
 
-	Идеи:
-	- линия языков в резюме 
-	- фон малевичем в резюме
-	- конвертер валют
+    Идеи:
+    - линия языков в резюме
+    - фон малевичем в резюме
+    - конвертер валют
+
+[ ↑ В меню](#navigation)
 
 ---
 
 <!-- ! -->
 <!-- ! -->
 <!-- ! -->
-# 🤡 **Git** 🤡
 
+# 🤡 **Git** 🤡
 
 ## Стандартная загрузка
 
@@ -488,6 +598,8 @@ formData.forEach(function (value, key) {
 `:q` - выйти нах из терминального редактора
 
 ---
+
+[ ↑ В меню](#navigation)
 
 `git checkout` - переключение между версиями и **_отмена изменений если надо_**
 
@@ -522,3 +634,5 @@ formData.forEach(function (value, key) {
     [alias]
     	co = checkout
     	st = status
+
+[ ↑ В меню](#navigation)
