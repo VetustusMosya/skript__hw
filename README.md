@@ -22,6 +22,7 @@
 1. [Задержки и дата](#time)
 1. [Другое](#other)
 1. [Загрузки скриптов](#skripts-load)
+1. [npm](#npm)
 <!--  1. []()  -->
 
 ## База
@@ -31,6 +32,8 @@
 `undefined` - означает, что «значение не было присвоено».
 
 `||` ИЛИ : `&&` И : `!` НE : `??` Оператор нулевого слияния
+
+`(item) => { return item*2}` === `item => item*2`
 
 # Not sort
 
@@ -103,6 +106,8 @@ arr.forEach(function (item, i, arr) {
 # Object
 
 ![](./img/021%20Objects.jpg)
+
+`const arr = Object.entries(obj)` -> создание массива в виде матрицы [[],[],[]]
 
 `delete obj.name` -> удаление свойства
 
@@ -191,10 +196,20 @@ class Child extends Parent {
 `const newArr = arr.slice()` -> копируем массив
 
 ```js
-arr.forEach(function(item, i, arr){
+arr.forEach((item, i, arr) =>{
 		(`${item) элемент - ${i) номер эл. - ${arr) весь масив`);
 });
 ```
+
+`const newArr = arr.filter(item =>{ условие });` -> создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции
+
+`const newArr = arr.map((item) => { изменить });` -> создаёт новый массив с результатом вызова указанной функции для каждого элемента массива
+
+`arr.some(item => условие)` -> возвращает true, если хоть один элемент удовлетворяет условию
+
+`arr.every(item => условие)` -> возвращает true, если все элементы удовлетворяют условию
+
+`const a = arr.reduce((sum, next)=>{ sum += next}, first)` -> схлопывает массив в одну переменну
 
 `for ( let value of arr){}` - перебор (позволяет break & contine)
 
@@ -555,6 +570,16 @@ a.then((b) => {
 `<script defer src="js/script.js"></script>` -> скрипт подгружается в фоновом режиме, запускает ток, когда скрипт загрузит и когда ДОМ дерево загружено
 
 `<script async src="js/script.js"></script>` -> загружаются в фоноом режиме, но выполняется сразу, как загрузится. Используется для счетчиков посещений, т.е. скрипт не взаимодействует с другими скриптами и ДОМ деревом
+
+## npm
+
+npm init
+
+npm i json-server --save-dev
+
+npm i
+
+npx json-server --watch db.json
 
 ---
 

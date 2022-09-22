@@ -1,0 +1,22 @@
+{
+  "name": "hw__js",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VetustusMosya/skript__hw.git"
+  },
+  "author": "Moiseev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VetustusMosya/skript__hw/issues"
+  },
+  "homepage": "https://github.com/VetustusMosya/skript__hw#readme",
+  "devDependencies": {
+    "json-server": "^0.17.0"
+  }
+}

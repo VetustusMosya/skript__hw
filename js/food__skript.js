@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.classList.add('show');
     modal.classList.remove('hide');
     document.body.style.overflow = 'hidden';
-    clearInterval(modalTimerId);
+    // clearInterval(modalTimerId);
   }
 
   modal.addEventListener('click', (e) => {
@@ -120,7 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const modalTimerId = setTimeout(openModal, 9999);
+  // const modalTimerId = setTimeout(openModal, 9999);
 
   function showModalByScroll() {
     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
@@ -277,6 +277,10 @@ window.addEventListener("DOMContentLoaded", () => {
       // });
     });
   }
+
+  fetch('http://localhost:3000/menu')
+    .then(data => data.json())
+    .then(json => console.log(json));
 
   function showThanksModal(message) {
     const prevModalDialog = document.querySelector('.modal__dialog');
