@@ -2,30 +2,30 @@
 
 ## Navigation
 
-1. [Циклы и условия](#terms-сycles)
-1. [Функции](#function)
-1. [this](#this)
-1. [Обьекты](#object)
-1. [Классы](#classes)
-1. [Наследование](#extends)
-1. [Массивы](#array)
-1. [События](#event)
-1. [Делегирование](#delegation)
-1. [Поиск](#search-element)
-1. [Стили](#css)
-1. [JSON](#json)
-1. [Серверное взаимодействие](#server-interaction)
-1. [Обещания](#promise)
-1. [Метрики](#metrics)
-1. [HTML](#html)
-1. [Метиматика](#math)
-1. [Задержки и дата](#time)
-1. [Другое](#other)
-1. [Загрузки скриптов](#skripts-load)
-1. [npm](#npm)
+1.  [Циклы и условия](#terms-сycles)
+1.  [Функции](#function)
+1.  [this](#this)
+1.  [Обьекты](#object)
+1.  [Классы](#classes)
+1.  [Наследование](#extends)
+1.  [Массивы](#array)
+1.  [События](#event)
+1.  [Делегирование](#delegation)
+1.  [Поиск](#search-element)
+1.  [Стили](#css)
+1.  [JSON](#json)
+1.  [Серверное взаимодействие](#server-interaction)
+1.  [Обещания](#promise)
+1.  [Метрики](#metrics)
+1.  [HTML](#html)
+1.  [Метиматика](#math)
+1.  [Задержки и дата](#time)
+1.  [Другое](#other)
+1.  [Загрузки скриптов](#skripts-load)
+1.  [npm](#npm)
 <!--  1. []()  -->
 
-## База
+## Base
 
 `null` - представляет собой «ничего», «пусто» или «значение неизвестно».
 
@@ -326,6 +326,10 @@ wrapper.addEventListener("click", (event) => {
 
 `JSON.parde(obj)` -> раскодирование в обьект
 
+```js
+JSON.stringify(Object.fronEntri(formData.entries()));
+```
+
 ```JSON
 {
 	"atribute": "string",
@@ -400,6 +404,20 @@ request.addEventListener("load", () => {
 - `readystatechange` -> изменение readyState
 
 - `load` -> завершена загрузка
+
+[ ↑ В меню](#navigation)
+
+<!-- ! -->
+
+# LocalStorage
+
+`localStorage.setItem('id', 'value')` -> задание значения
+
+`localStorage.getItem('id') ` -> получение значения
+
+`localStorage.removeItem('id') ` -> удаление поля
+
+`localStorage.clear() ` -> полная отчистка
 
 [ ↑ В меню](#navigation)
 
@@ -579,7 +597,7 @@ npm i json-server --save-dev
 
 npm i
 
-npx json-server --watch db.json
+> **npx json-server --watch ./db.json**
 
 ---
 
