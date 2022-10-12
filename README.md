@@ -599,6 +599,8 @@ npm i
 
 > **npx json-server --watch ./db.json**
 
+> **npx webpack**
+
 ---
 
     Идеи:
